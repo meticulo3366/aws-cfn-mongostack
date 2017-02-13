@@ -11,8 +11,8 @@
 
         "InstanceType" : {
             "Type" : "String", 
-            "Default" : "m1.small", 
-            "AllowedValues" : [ "t1.micro", "m1.small","m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge", "cc1.4xlarge" ],
+            "Default" : "t2.nano", 
+            "AllowedValues" : [ "t1.micro", "m1.small","m1.medium", "m1.large", "m1.xlarge","t2.nano", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge", "cc1.4xlarge" ],
             "Description" : "EC2 instance type (e.g. m1.large, m1.xlarge, m2.xlarge)"
         },
 
@@ -302,7 +302,7 @@
 
     "Outputs" : {
         "InstanceName" : {
-            "Value" : { "Fn::GetAtt" : [ "MongoInstance", "PublicDnsName" ] },
+            "Value" : { "Fn::GetAtt" : [ "MongoInstance", "PrivateDnsName" ] },
             "Description" : "public DNS name of the new MongoInstance"
         }
     }
